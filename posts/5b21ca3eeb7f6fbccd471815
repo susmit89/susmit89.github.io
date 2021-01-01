@@ -11,7 +11,7 @@
 	"content": {
 		"rows": 7,
 		"coumns": 0,
-		"images": [],
+		"images": {},
 		"text": [{
 				"row": 0,
 				"column": 0,
@@ -35,7 +35,7 @@
 				"column": 0,
 				"type": "image",
 				"caption": ["This is subheading"],
-				"reference": ""
+				"reference": "/images/0a874013-e21b-40ad-9ddc-86d2851a2fc2.jpg"
 			},
 			{
 				"row": 4,
