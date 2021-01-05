@@ -20,8 +20,19 @@ export default function Index({ blogs, topics }) {
     </div>
   );
 }
-
+/*
 export async function getStaticProps() {
+  const { data } = await getTopics();
+
+  const topics = [{ _id: "", name: "All Topics" }, ...data];
+  const { data: blogs } = await getBlogs();
+
+  return {
+    props: { blogs, topics },
+  };
+}*/
+
+export async function getServerSideProps(context) {
   const { data } = await getTopics();
 
   const topics = [{ _id: "", name: "All Topics" }, ...data];

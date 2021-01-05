@@ -22,7 +22,7 @@ export default function Blog({ topics, blog }) {
     </>
   );
 }
-
+/*
 export async function getStaticProps({ params }) {
   console.log(params);
   const { data: topics } = await getTopics();
@@ -48,4 +48,29 @@ export async function getStaticPaths() {
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: false };
+}*/
+
+export async function getServerSideProps(context) {
+  console.log(context);
+  const { data: topics } = await getTopics();
+
+  //const blog = await getBlog(blogId);
+  try {
+    const { data: blog } = await getBlog(context.params.id);
+    return {
+      props: {
+        topics,
+        blog,
+      },
+    };
+  } catch (ex) {
+    console.log(ex);
+  }
+
+  return {
+    props: {
+      topics,
+    },
+  };
 }
+
