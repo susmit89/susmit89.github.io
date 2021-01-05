@@ -49,7 +49,7 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }*/
 
-export async function getServerSideProps(context) {
+async function getServerSideProps(context) {
   console.log(context);
   const { data: topics } = await getTopics();
 
