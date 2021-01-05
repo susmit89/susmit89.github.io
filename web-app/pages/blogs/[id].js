@@ -7,10 +7,9 @@ import Head from "next/head";
 
 export default function Blog({ topics, blog }) {
   const router = useRouter();
-  console.log(router);
-  // if (!router.isFallback && !post?.id) {
-  //    return <ErrorPage statusCode={404} />;
-  //  }
+  if (!router.isFallback && !blog) {
+    return <ErrorPage statusCode={404} />;
+  }
   return (
     <>
       <Head>
