@@ -32,7 +32,7 @@ export async function getStaticProps() {
   };
 }*/
 
-export async function getServerSideProps(context) {
+async function getServerSideProps(context) {
   const { data } = await getTopics();
 
   const topics = [{ _id: "", name: "All Topics" }, ...data];
