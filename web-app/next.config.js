@@ -1,2 +1,6 @@
-const withCSS = require("@zeit/next-css");
-const isProd = process.env.NODE_ENV === "production";
+const isProd = process.env.NODE_ENV === 'production'
+
+module.exports = {
+  // Use the CDN in production and localhost for development.
+  assetPrefix: isProd ? 'https://cdn.statically.io/gh/susmit89/susmiit89.github.io/gh-pages/' : '',
+}
